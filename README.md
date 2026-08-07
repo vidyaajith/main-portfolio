@@ -1,1 +1,1154 @@
-# main-portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athmaja Vidya Ajith | Fractional COO for Scaling Founders</title>
+<meta name="description" content="Fractional COO for founders whose business has outgrown its systems. Operational infrastructure, team accountability and KPI visibility, so growth stops depending on you.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2308080A'/%3E%3Cpath d='M18 20 L32 46 L46 20' fill='none' stroke='%23D9A94C' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>if("IntersectionObserver" in window)document.documentElement.classList.add("js-rv");</script>
+<style>
+  :root{
+    --ink:#08080A;
+    --ink-2:#0E0E11;
+    --ink-3:#141418;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --paper:#F2EEE6;
+    --paper-dim:rgba(242,238,230,.62);
+    --paper-faint:rgba(242,238,230,.38);
+    --gold:#D9A94C;
+    --gold-soft:rgba(217,169,76,.13);
+    --rust:#C4643C;
+    --rust-soft:rgba(196,100,60,.13);
+    --green:#5FD08A;
+    --green-soft:rgba(95,208,138,.13);
+    --serif:'Instrument Serif', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --pad: clamp(24px, 6vw, 120px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);color:var(--paper);font-family:var(--sans);
+    font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  #progress{position:fixed;top:0;left:0;height:2px;width:0%;z-index:100;background:linear-gradient(90deg,var(--rust),var(--gold),var(--green));transition:width .1s linear}
+
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;
+    justify-content:space-between;padding:18px var(--pad);backdrop-filter:blur(14px);
+    background:rgba(8,8,10,0);border-bottom:1px solid transparent;
+    transition:background .4s ease,border-color .4s ease,padding .4s ease;
+  }
+  nav.stuck{background:rgba(8,8,10,.85);border-bottom-color:var(--line);padding:14px var(--pad)}
+  .nav-mark{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-dim)}
+  .nav-mark b{color:var(--paper);font-weight:500}
+  .nav-cta{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--ink);
+    background:var(--paper);text-decoration:none;padding:10px 20px;border-radius:100px;
+    transition:background .3s ease,transform .3s ease;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--gold);transform:translateY(-1px)}
+
+  section{position:relative;z-index:2;padding:clamp(48px,6.5vw,86px) var(--pad)}
+  .wrap{max-width:1160px;margin:0 auto}
+  .narrow{max-width:840px;margin:0 auto}
+
+  .eyebrow{font-size:clamp(22px,3.2vw,34px);letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--gold);line-height:1.1;display:flex;align-items:center;gap:18px;margin-bottom:14px}
+  .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px;align-self:center}
+
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.2vw,22px);line-height:1.4;letter-spacing:0;margin-bottom:22px;color:var(--paper-dim)}
+  h2 em{font-style:italic;color:var(--gold)}
+  .lede{font-size:clamp(15px,1.6vw,16.5px);line-height:1.65;color:var(--paper-faint);max-width:66ch}
+  .lede strong{color:var(--paper);font-weight:400}
+
+  /* ── hero ───────────────────────────────── */
+  .hero{min-height:auto;display:flex;flex-direction:column;justify-content:center;padding-top:104px;padding-bottom:clamp(48px,6vw,80px);overflow:hidden}
+  .hero::after{
+    content:'';position:absolute;z-index:-1;width:min(150vw,1500px);height:min(150vw,1500px);
+    top:-60%;right:-35%;border-radius:50%;
+    background:radial-gradient(circle,rgba(217,169,76,.13) 0%,rgba(196,100,60,.06) 38%,transparent 66%);filter:blur(30px);
+  }
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:12px;align-self:flex-start;
+    border:1px solid var(--line-2);border-radius:100px;padding:6px 15px 6px 11px;margin-bottom:24px;
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-dim);
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6.4vw,82px);line-height:1;letter-spacing:-.03em;margin-bottom:22px}
+  h1 .it{font-style:italic;display:block;color:var(--gold)}
+  .hero-sub{font-size:clamp(16px,1.8vw,19px);line-height:1.55;color:var(--paper-dim);max-width:46ch;margin-bottom:30px}
+  .hero-sub b{color:var(--paper);font-weight:400}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:0}
+
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:clamp(32px,6vw,84px);align-items:center}
+  .hero-photo{position:relative;flex-shrink:0}
+  .hero-photo img{
+    display:block;width:clamp(190px,21vw,290px);height:auto;aspect-ratio:1;object-fit:cover;
+    border-radius:50%;border:1px solid rgba(217,169,76,.42);
+    box-shadow:0 24px 70px rgba(0,0,0,.55), 0 0 0 10px rgba(217,169,76,.05);
+    filter:saturate(.92) contrast(1.02);
+  }
+  .hero-photo::after{
+    content:'';position:absolute;inset:-14%;z-index:-1;border-radius:50%;
+    background:radial-gradient(circle,rgba(217,169,76,.16) 0%,transparent 68%);
+  }
+  .hero-photo .cap{
+    margin-top:20px;text-align:center;font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--paper-faint);line-height:1.7;
+  }
+  .hero-photo .cap b{display:block;color:var(--paper-dim);font-weight:500;letter-spacing:.18em}
+
+  .btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:500;padding:16px 30px;border-radius:100px;transition:all .35s cubic-bezier(.22,1,.36,1)}
+  .btn-primary{background:var(--paper);color:var(--ink)}
+  .btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 14px 40px rgba(217,169,76,.28)}
+  .btn-ghost{border:1px solid var(--line-2);color:var(--paper-dim)}
+  .btn-ghost:hover{border-color:var(--paper);color:var(--paper)}
+  .btn .arw{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .btn:hover .arw{transform:translateX(4px)}
+
+  
+  /* ── illustration primitives ────────────── */
+  .ill{display:block;width:100%;height:auto}
+  .figure{border:1px solid var(--line);border-radius:6px;background:var(--ink-2);padding:clamp(20px,3vw,34px);position:relative;overflow:hidden}
+  .figure .cap{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);
+    margin-top:18px;display:flex;align-items:center;gap:10px;
+  }
+  .figure .cap::before{content:'';width:16px;height:1px;background:var(--gold)}
+
+  .js-rv .draw path,.js-rv .draw line,.js-rv .draw circle,.js-rv .draw rect,.js-rv .draw polyline{
+    stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
+    transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
+  }
+  .rv.in .draw path,.rv.in .draw line,.rv.in .draw circle,.rv.in .draw rect,.rv.in .draw polyline{stroke-dashoffset:0}
+  .js-rv .grow{transform:scaleY(0);transform-origin:bottom;transform-box:fill-box;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+  .rv.in .grow{transform:scaleY(1)}
+  .js-rv .fadein{opacity:0;transition:opacity .9s ease .5s}
+  .rv.in .fadein{opacity:1}
+
+  .ico{width:22px;height:22px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .ico.red{stroke:var(--rust)}
+  .ico.grn{stroke:var(--green)}
+  .icobox{
+    width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:var(--gold-soft);border:1px solid rgba(217,169,76,.2);margin-bottom:24px;
+  }
+  .icobox.red{background:var(--rust-soft);border-color:rgba(196,100,60,.24)}
+
+  /* ── who this is for ────────────────────── */
+  .whogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}
+  .who{background:var(--ink);padding:clamp(26px,3.2vw,40px);transition:background .4s ease}
+  .who:hover{background:var(--ink-3)}
+  .who h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,32px);line-height:1.1;margin-bottom:14px}
+  .who p{font-size:15px;color:var(--paper-dim);line-height:1.6}
+  .anyindustry{
+    margin-top:28px;border:1px solid var(--line);border-radius:6px;padding:22px clamp(20px,3vw,32px);
+    background:var(--ink-2);font-size:15px;color:var(--paper-dim);display:flex;gap:16px;align-items:center;
+  }
+  .anyindustry b{color:var(--paper);font-weight:400}
+
+  .split{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,110px);align-items:start}
+  .gaps{list-style:none;margin-top:8px}
+  .gaps li{display:flex;gap:18px;padding:24px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--paper-dim);line-height:1.6;align-items:flex-start}
+  .gaps li:first-child{border-top:1px solid var(--line)}
+  .gaps b{color:var(--paper);font-weight:400}
+  .gaps .ico{width:30px;height:30px;margin-top:-1px;stroke-width:1.25}
+
+  /* ── approach ───────────────────────────── */
+  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+  .ap{background:var(--ink-2);padding:clamp(24px,3vw,34px);transition:background .4s ease}
+  .ap:hover{background:var(--ink-3)}
+  .ap .num{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:18px}
+  .ap h3{font-size:17px;font-weight:500;letter-spacing:-.01em;margin-bottom:12px;line-height:1.3}
+  .ap p{font-size:14px;color:var(--paper-faint);line-height:1.6}
+
+  .leak{
+    margin-top:56px;border:1px solid rgba(217,169,76,.28);background:var(--gold-soft);border-radius:6px;
+    padding:clamp(26px,4vw,44px);display:flex;gap:clamp(20px,3vw,38px);align-items:center;flex-wrap:wrap;
+  }
+  .leak .tag{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold);white-space:nowrap}
+  .leak p{font-family:var(--serif);font-size:clamp(20px,2.7vw,32px);line-height:1.28;flex:1;min-width:260px}
+  .leak .bigico{width:52px;height:52px;stroke:var(--gold);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+  /* ── steps ──────────────────────────────── */
+  .owngrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .own-c{background:var(--ink);padding:clamp(24px,2.8vw,36px);display:flex;flex-direction:column;gap:14px}
+  .own-c:nth-child(-n+3){grid-column:span 2}
+  .own-c:nth-child(n+4){grid-column:span 3}
+  .own-c .top{display:flex;align-items:center;gap:12px}
+  .own-c .n{font-family:var(--serif);font-size:26px;line-height:1;color:var(--gold);opacity:.32}
+  .own-c .ico{width:20px;height:20px}
+  .own-c .lab{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .own-c h3{font-family:var(--serif);font-weight:400;font-size:clamp(19px,1.8vw,23px);line-height:1.28;letter-spacing:-.01em;color:var(--paper)}
+
+  .bullets{list-style:none;margin-top:30px;display:grid;gap:18px;max-width:62ch}
+  .bullets li{display:flex;gap:14px;font-size:15px;color:var(--paper-faint);line-height:1.6;align-items:flex-start}
+  .bullets .ico{width:18px;height:18px;margin-top:3px}
+  .bullets b{color:var(--paper);font-weight:500;display:block;margin-bottom:2px}
+
+  /* ── service areas ──────────────────────── */
+  .sectors{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+  .sector{background:var(--ink);padding:clamp(26px,3vw,38px);grid-column:span 2;display:flex;flex-direction:column;transition:background .4s ease}
+  .sector:hover{background:var(--ink-3)}
+  .sector:nth-child(4),.sector:nth-child(5){grid-column:span 3}
+  .sector .vis{margin-bottom:22px}
+  .secico{width:40px;height:40px;display:block;stroke:var(--gold);fill:none;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+  .sector h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.9vw,32px);line-height:1.08;margin-bottom:6px}
+  .sector .kind{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .sector .breaks{font-size:15px;color:var(--paper-dim);line-height:1.6;margin-bottom:20px}
+  .sector ul{list-style:none;display:grid;gap:10px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
+  .sector li{display:flex;gap:11px;font-size:13.5px;color:var(--paper-faint);line-height:1.5;align-items:flex-start}
+  .sector li svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ── results ────────────────────────────── */
+  .results{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px}
+  .r{background:var(--ink-2);padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:14px}
+  .r .vis{height:66px;display:flex;align-items:flex-end}
+  .r .big{font-family:var(--serif);font-size:clamp(34px,4.6vw,56px);line-height:.95;letter-spacing:-.03em;color:var(--gold)}
+  .r .big.grn{color:var(--green)}
+  .r .big.word{font-size:clamp(24px,3.2vw,38px);color:var(--paper)}
+  .r p{font-size:14px;color:var(--paper-dim);line-height:1.5}
+  .r .sub{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-faint);margin-top:-8px}
+
+  /* ── engagement options ─────────────────── */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+  .tier{background:var(--ink);padding:clamp(28px,3.2vw,42px);display:flex;flex-direction:column;transition:background .4s ease}
+  .tier:hover{background:var(--ink-3)}
+  .tier.feature{background:var(--ink-2);border-top:2px solid var(--gold)}
+  .tier .k{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .tier h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.2vw,36px);line-height:1.08;margin-bottom:10px}
+  .tier .price{font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);color:var(--gold);margin-bottom:6px;line-height:1.2}
+  .tier .hours{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:24px}
+  .tier .best{font-size:15px;color:var(--paper-dim);line-height:1.6;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:22px}
+  .tier ul{list-style:none;display:grid;gap:14px;margin-bottom:28px}
+  .tier li{display:flex;gap:12px;font-size:14px;color:var(--paper-faint);line-height:1.55;align-items:flex-start}
+  .tier li svg{width:16px;height:16px;flex-shrink:0;margin-top:3px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .tier .go{margin-top:auto;font-size:13px;letter-spacing:.08em;color:var(--paper);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:4px;align-self:flex-start;transition:color .3s ease,border-color .3s ease}
+  .tier .go:hover{color:var(--gold);border-color:var(--gold)}
+  .scopenote{margin-top:34px;font-size:14px;color:var(--paper-faint);display:flex;gap:14px;align-items:flex-start;max-width:70ch}
+
+  /* ── loom / links ───────────────────────── */
+  .loom{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center;margin-top:48px}
+  .playcard{border:1px solid var(--line);border-radius:6px;background:var(--ink-2);padding:clamp(24px,3vw,38px);position:relative;overflow:hidden}
+  .linkgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}
+  .lk{background:var(--ink-2);padding:clamp(24px,3vw,34px);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:background .4s ease}
+  .lk:hover{background:var(--ink-3)}
+  .lk .t{font-family:var(--serif);font-size:24px;color:var(--paper)}
+  .lk .s{font-size:13px;color:var(--gold);display:flex;align-items:center;gap:8px}
+  .lk:hover .s .arw{transform:translateX(4px)}
+  .lk .arw{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+
+  /* ── placeholders ───────────────────────── */
+  .imgslot{
+    margin-top:34px;border:1px dashed var(--line-2);border-radius:6px;background:var(--ink-2);
+    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;text-align:center;padding:24px;
+  }
+  .imgslot .ico{width:26px;height:26px;margin-bottom:6px}
+  .imgslot .k{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  .imgslot .n{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);color:var(--paper-dim)}
+  .imgslot .s{font-size:12px;color:var(--paper-faint);font-family:ui-monospace,Menlo,monospace}
+
+  /* ── testimonial screenshots ────────────── */
+  .tbar{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,52px);align-items:baseline;margin-top:40px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+  .tbar .item{display:flex;align-items:baseline;gap:12px}
+  .tbar .v{font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);line-height:1;color:var(--gold)}
+  .tbar .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);max-width:18ch;line-height:1.5}
+  .tbar .uplogo{width:30px;height:auto;flex-shrink:0;align-self:center}
+  .tstars{display:flex;gap:5px;align-items:center}
+  .tstars svg{width:16px;height:16px;fill:var(--gold)}
+
+  .tgrid{columns:2;column-gap:22px;margin-top:44px}
+  .tcard{
+    break-inside:avoid;margin:0 0 22px;background:var(--paper);border-radius:8px;
+    padding:clamp(18px,2vw,24px);box-shadow:0 18px 50px rgba(0,0,0,.45);
+    border:1px solid rgba(217,169,76,.18);
+  }
+  .trate{display:flex;align-items:center;gap:4px;margin-bottom:12px}
+  .trate svg{width:13px;height:13px;fill:#F04A00}
+  .trate span{margin-left:6px;font-size:12.5px;font-weight:500;color:rgba(8,8,10,.7)}
+  .tcard blockquote{margin:0;font-style:italic;font-size:13.5px;line-height:1.62;color:rgba(8,8,10,.8)}
+  .tcard blockquote p{margin:0 0 10px}
+  .tcard blockquote p:last-child{margin-bottom:0}
+  .tend{margin-top:13px;font-size:11px;color:rgba(8,8,10,.5)}
+  .ttags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .ttags span{font-size:10.5px;line-height:1.4;color:rgba(8,8,10,.62);background:rgba(8,8,10,.06);border-radius:100px;padding:4px 10px}
+  .tcard .src{
+    display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(8,8,10,.1);
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(8,8,10,.45);
+  }
+  .tcard .src::before{content:'';width:14px;height:1px;background:rgba(196,100,60,.6)}
+
+  /* ── timeline ───────────────────────────── */
+  .timeline{margin-top:48px;border-top:1px solid var(--line);padding-top:40px}
+  .tl-head{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:26px}
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px)}
+  .tl-item{position:relative}
+  .tl-n{font-family:var(--serif);font-size:clamp(34px,3.6vw,46px);line-height:1;letter-spacing:-.02em;color:var(--gold);opacity:.34;margin-bottom:16px}
+  .tl-item:last-child .tl-n{color:var(--green);opacity:.5}
+  .tl-item .w{font-family:var(--serif);font-size:24px;color:var(--gold);margin-bottom:8px}
+  .tl-item:last-child .w{color:var(--green)}
+  .tl-item p{font-size:14px;color:var(--paper-faint);line-height:1.55;max-width:30ch}
+
+  /* ── relief ─────────────────────────────── */
+  .relief{text-align:center;position:relative;overflow:hidden}
+  .relief::after{content:'';position:absolute;z-index:-1;left:50%;top:50%;transform:translate(-50%,-50%);width:min(120vw,1100px);height:min(120vw,1100px);border-radius:50%;background:radial-gradient(circle,rgba(95,208,138,.09) 0%,transparent 62%)}
+  .relief .eyebrow{justify-content:center}
+  .relief .eyebrow::after,.relief .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:var(--line)}
+  .relief h2{font-size:clamp(38px,7vw,86px);max-width:16ch;margin:0 auto 32px}
+  .relief .lede{margin:0 auto}
+  .weekvis{max-width:620px;margin:52px auto 0}
+
+  /* ── insight ────────────────────────────── */
+  .insight{background:var(--paper);color:var(--ink);text-align:center}
+  .insight .eyebrow{color:var(--rust);justify-content:center}
+  .insight .eyebrow::after,.insight .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:rgba(8,8,10,.16)}
+  .insight blockquote{font-family:var(--serif);font-size:clamp(30px,5.6vw,66px);line-height:1.1;letter-spacing:-.025em;max-width:17ch;margin:0 auto}
+  .insight .attr{margin-top:36px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(8,8,10,.45);font-weight:500}
+  .insight .quotemark{width:44px;height:auto;margin:0 auto 22px;display:block;opacity:.32}
+
+  /* ── final ──────────────────────────────── */
+  .final{text-align:center;position:relative;overflow:hidden;padding-top:clamp(90px,13vw,170px)}
+  .final::after{content:'';position:absolute;z-index:-1;left:50%;bottom:-55%;transform:translateX(-50%);width:min(140vw,1300px);height:min(140vw,1300px);border-radius:50%;background:radial-gradient(circle,rgba(196,100,60,.14) 0%,rgba(217,169,76,.06) 40%,transparent 66%);filter:blur(24px)}
+  .final h2{font-size:clamp(38px,7.5vw,92px);max-width:14ch;margin:0 auto 28px}
+  .final .lede{margin:0 auto 46px;text-align:center}
+  .final .mail{display:block;margin-top:30px;font-size:13px;letter-spacing:.14em;color:var(--paper-faint);text-decoration:none}
+  .final .mail:hover{color:var(--gold)}
+
+  footer{border-top:1px solid var(--line);padding:34px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:var(--paper-faint);position:relative;z-index:2}
+  footer a{color:var(--paper-dim);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+
+  .js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+  .js-rv .rv.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    .approach{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr;gap:40px}
+    .rgrid{grid-template-columns:1fr}
+    .tl{grid-template-columns:1fr;gap:26px}
+    .tl-item p{max-width:44ch}
+    .whogrid{grid-template-columns:1fr}
+    .tiers{grid-template-columns:1fr}
+    .sectors{grid-template-columns:repeat(2,1fr)}
+    .sector,.sector:nth-child(4),.sector:nth-child(5){grid-column:span 1}
+    .linkgrid{grid-template-columns:repeat(2,1fr)}
+    .loom{grid-template-columns:1fr}
+    .tgrid{columns:1}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero-photo{order:-1;justify-self:start;display:flex;align-items:center;gap:22px}
+    .hero-photo img{width:clamp(96px,20vw,132px)}
+    .hero-photo .cap{margin-top:0;text-align:left}
+  }
+  @media(max-width:720px){
+    .owngrid{grid-template-columns:1fr}
+    .own-c:nth-child(-n+3),.own-c:nth-child(n+4){grid-column:span 1}
+    .nav-cta{font-size:10.5px;letter-spacing:.06em;padding:8px 14px}
+    .nav-mark b{display:none}
+    .nav-mark{font-size:11px;max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .hero-actions .btn{flex:1;justify-content:center}
+    .sectors{grid-template-columns:1fr}
+  }
+  @media(max-width:520px){.approach{grid-template-columns:1fr}.linkgrid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .js-rv .rv{opacity:1;transform:none}
+    .js-rv .draw path,.js-rv .draw line,.js-rv .draw circle,.js-rv .draw rect,.js-rv .draw polyline{stroke-dashoffset:0}
+    .js-rv .grow{transform:none}.js-rv .fadein{opacity:1}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="nav">
+  <div class="nav-mark">Athmaja Vidya Ajith &nbsp;·&nbsp; <b>Fractional COO</b></div>
+  <a class="nav-cta" href="#book">Book a call</a>
+</nav>
+
+<!-- ═══ 1. HERO ═════════════════════════════════════ -->
+<header class="hero">
+  <div class="wrap" style="width:100%">
+    <div class="hero-tag rv"><span class="dot"></span> Fractional COO for scaling founders</div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="rv">Your business is<span class="it">outgrowing your systems.</span></h1>
+        <p class="hero-sub rv">I fix that before it breaks you. Build the systems your business needs to grow <b>without you doing everything</b>.</p>
+
+        <div class="hero-actions rv" style="margin-bottom:0">
+          <a class="btn btn-primary" href="#book">Book a 30 minute intro call <span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="#results">See the results</a>
+        </div>
+      </div>
+
+      <div class="hero-photo rv">
+        <img src="data:image/webp;base64,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" alt="Athmaja Vidya Ajith, fractional COO" width="520" height="520">
+        <div class="cap"><b>Athmaja Vidya Ajith</b>Fractional COO</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ 2. RESULTS ══════════════════════════════════ -->
+<section class="results" id="results">
+  <div class="wrap">
+    <div class="eyebrow rv">Results at a glance</div>
+    <h2 class="rv">Structure behind the scenes, <em>numbers out front.</em></h2>
+
+    <div class="rgrid">
+      <div class="r rv">
+        <div class="vis">
+          <svg preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Revenue rising across the engagement">
+            <g transform="translate(-5.0 3.0)">
+            <rect class="grow" x="6" y="60" width="26" height="30" rx="3" fill="rgba(95,208,138,.22)"/>
+            <rect class="grow" x="42" y="48" width="26" height="42" rx="3" fill="rgba(95,208,138,.32)" style="transition-delay:.1s"/>
+            <rect class="grow" x="78" y="34" width="26" height="56" rx="3" fill="rgba(95,208,138,.45)" style="transition-delay:.2s"/>
+            <rect class="grow" x="114" y="20" width="26" height="70" rx="3" fill="rgba(95,208,138,.62)" style="transition-delay:.3s"/>
+            <g class="fadein" style="transition-delay:.55s">
+              <path d="M152 74 L186 22" stroke="#5FD08A" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M170 21h17v17" fill="none" stroke="#5FD08A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </g>
+          </svg>
+        </div>
+        <div class="big grn" data-count="200" data-suffix="%">200%</div>
+        <div class="sub">Fathom High</div>
+        <p>Revenue increase, scaled on the back of an operation that could finally take the volume.</p>
+      </div>
+
+      <div class="r rv">
+        <div class="vis">
+          <svg preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Output per person doubled">
+            <g transform="translate(-43.2 10.2)">
+            <g class="fadein">
+              <circle cx="56" cy="66" r="6" fill="none" stroke="rgba(217,169,76,.5)" stroke-width="1.5"/>
+              <path d="M45 82a11 11 0 0 1 22 0" fill="none" stroke="rgba(217,169,76,.5)" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="49" y="44" width="14" height="8" rx="2" fill="rgba(217,169,76,.34)"/>
+              <rect x="49" y="32" width="14" height="8" rx="2" fill="rgba(217,169,76,.34)"/>
+            </g>
+            <g class="fadein" style="transition-delay:.35s">
+              <path d="M88 58h20" stroke="rgba(242,238,230,.22)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M103 53l5 5-5 5" stroke="rgba(242,238,230,.22)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g class="fadein" style="transition-delay:.55s">
+              <circle cx="144" cy="66" r="6" fill="none" stroke="rgba(95,208,138,.75)" stroke-width="1.5"/>
+              <path d="M133 82a11 11 0 0 1 22 0" fill="none" stroke="rgba(95,208,138,.75)" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="137" y="44" width="14" height="8" rx="2" fill="rgba(95,208,138,.7)"/>
+              <rect x="137" y="32" width="14" height="8" rx="2" fill="rgba(95,208,138,.55)"/>
+              <rect x="137" y="20" width="14" height="8" rx="2" fill="rgba(95,208,138,.4)"/>
+              <rect x="137" y="8" width="14" height="8" rx="2" fill="rgba(95,208,138,.26)"/>
+            </g>
+          </g>
+          </svg>
+        </div>
+        <div class="big grn" data-count="50" data-suffix="%">50%</div>
+        <div class="sub">In 2 months</div>
+        <p>Productivity gain, with no extra headcount and no longer weeks.</p>
+      </div>
+
+      <div class="r rv">
+        <div class="vis">
+          <svg preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="The system holds the work instead of the founder">
+            <g transform="translate(-64.7 15.0)">
+            <g class="fadein" opacity=".55">
+              <circle cx="100" cy="48" r="7" fill="none" stroke="rgba(196,100,60,.55)" stroke-width="1.4" stroke-dasharray="3 3"/>
+              <g stroke="rgba(196,100,60,.3)" stroke-width="1.3" stroke-dasharray="3 4">
+                <path d="M100 41V22"/><path d="M106 44l19-6"/><path d="M104 54l12 16"/><path d="M96 54l-12 16"/><path d="M94 44l-19-6"/>
+              </g>
+            </g>
+            <g class="fadein" style="transition-delay:.4s">
+              <path d="M100 18 128.5 38.7 117.6 72.3 82.4 72.3 71.5 38.7Z" fill="none" stroke="rgba(95,208,138,.5)" stroke-width="1.5" stroke-linejoin="round"/>
+            </g>
+            <g class="fadein" style="transition-delay:.6s" fill="rgba(95,208,138,.14)" stroke="rgba(95,208,138,.7)" stroke-width="1.4">
+              <circle cx="100" cy="18" r="5"/><circle cx="128.5" cy="38.7" r="5"/><circle cx="117.6" cy="72.3" r="5"/>
+              <circle cx="82.4" cy="72.3" r="5"/><circle cx="71.5" cy="38.7" r="5"/>
+            </g>
+          </g>
+          </svg>
+        </div>
+        <div class="big grn" data-count="95" data-suffix="%">95%</div>
+        <div class="sub">In 3 months</div>
+        <p>Founder workload reduced, with the work still getting done to the same standard.</p>
+      </div>
+    </div>
+
+    <div class="rgrid" style="margin-top:1px">
+      <div class="r rv">
+        <div class="vis">
+          <svg preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Digital projects managed across 20 plus companies">
+            <g transform="translate(-54.2 6.2)">
+            <g class="fadein">
+              <path d="M100 14l44 20-44 20-44-20 44-20Z" fill="rgba(217,169,76,.12)" stroke="rgba(217,169,76,.55)" stroke-width="1.5" stroke-linejoin="round"/>
+            </g>
+            <g class="fadein" style="transition-delay:.3s">
+              <path d="M56 48l44 20 44-20" fill="none" stroke="rgba(217,169,76,.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g class="fadein" style="transition-delay:.55s">
+              <path d="M56 66l44 20 44-20" fill="none" stroke="rgba(95,208,138,.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </g>
+          </svg>
+        </div>
+        <div class="big" data-count="100" data-suffix="+">100+</div>
+        <div class="sub">Across 20+ companies</div>
+        <p>Digital projects managed end to end, across more than twenty companies and five sectors.</p>
+      </div>
+
+      <div class="r rv">
+        <div class="vis">
+          <svg preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Upwork">
+            <g class="fadein" transform="translate(1 28.35) scale(3.15)"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" fill="#6FDA44"/></g>
+          </svg>
+        </div>
+        <div class="big" data-count="100" data-suffix="%">100%</div>
+        <div class="sub">Across all engagements</div>
+        <p>Client retention across all engagements, which is the metric I care about most.</p>
+      </div>
+
+      <div class="r rv">
+        <div class="vis">
+          <svg preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Upwork">
+            <g class="fadein" transform="translate(1 28.35) scale(3.15)"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" fill="#6FDA44"/></g>
+          </svg>
+        </div>
+        <div class="big word">Top Rated</div>
+        <div class="sub">Job success score</div>
+        <p>Perfect Upwork job success score, maintained across every project delivered.</p>
+      </div>
+    </div>
+
+    <div class="timeline rv">
+      <div class="tl-head">How an engagement starts</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-n">01</div><div class="w">Scoping call</div><p>Thirty minutes on what is breaking and what the right level of involvement looks like.</p></div>
+        <div class="tl-item"><div class="tl-n">02</div><div class="w">First 30 days</div><p>Audit the operation, name the root cause, agree the build order.</p></div>
+        <div class="tl-item"><div class="tl-n">03</div><div class="w">From there</div><p>Systems installed, cadence running, and the founder gradually out of the middle.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. WHO THIS IS FOR ══════════════════════════ -->
+<section id="who">
+  <div class="wrap">
+    <div class="eyebrow rv">Who this is for</div>
+    <h2 class="rv">Growing fast, held together by <em>one person.</em></h2>
+    <p class="lede rv">Revenue is climbing. The team is bigger. And every decision still routes through the founder, because nothing has been built to catch it.</p>
+
+    <div class="whogrid">
+      <div class="who rv">
+        <div class="icobox">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-6 4 4 5-7"/><path d="M17 8h4v4"/><path d="M3 21h18"/></svg>
+        </div>
+        <h3>Growing fast</h3>
+        <p>Revenue is climbing but your systems, processes and team structure have not kept pace.</p>
+      </div>
+      <div class="who rv">
+        <div class="icobox">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5"/><circle cx="17.5" cy="9.5" r="2.2"/><path d="M16 15c3 0 5 1.6 5 4.5"/></svg>
+        </div>
+        <h3>5 to 20 person team</h3>
+        <p>Big enough to need real structure, small enough that the founder is still holding it all together.</p>
+      </div>
+      <div class="who rv">
+        <div class="icobox red">
+          <svg class="ico red" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M4.2 7.2l2.1 2.1"/><path d="M17.7 14.7l2.1 2.1"/><path d="M3 12h3"/><path d="M18 12h3"/><circle cx="12" cy="12" r="3.4"/></svg>
+        </div>
+        <h3>Stretched founder</h3>
+        <p>You are still approving everything, managing everyone and fighting every fire yourself.</p>
+      </div>
+    </div>
+
+    <div class="anyindustry rv">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="stroke:var(--gold)"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>
+      <span><b>Any industry. Any model.</b> If you are the bottleneck in your own business, this is for you.</span>
+    </div>
+
+    <div class="split" style="margin-top:clamp(34px,4.5vw,58px)">
+      <div>
+        <div class="figure rv">
+          <svg class="ill draw" viewBox="0 0 420 300" fill="none" style="--len:200" aria-label="Every decision in the business routed through the founder">
+            <g stroke="rgba(196,100,60,.38)" stroke-width="1.2" stroke-linecap="round">
+              <line x1="210.0" y1="108.0" x2="210.0" y2="43.0"/>
+              <line x1="236.9" y1="117.8" x2="288.2" y2="56.4"/>
+              <line x1="249.0" y1="134.4" x2="347.1" y2="95.3"/>
+              <line x1="252.0" y1="150.0" x2="369.0" y2="150.0"/>
+              <line x1="249.0" y1="165.6" x2="347.1" y2="204.7"/>
+              <line x1="236.9" y1="182.2" x2="288.2" y2="243.6"/>
+              <line x1="210.0" y1="192.0" x2="210.0" y2="257.0"/>
+              <line x1="183.1" y1="182.2" x2="131.8" y2="243.6"/>
+              <line x1="171.0" y1="165.6" x2="72.9" y2="204.7"/>
+              <line x1="168.0" y1="150.0" x2="51.0" y2="150.0"/>
+              <line x1="171.0" y1="134.4" x2="72.9" y2="95.3"/>
+              <line x1="183.1" y1="117.8" x2="131.8" y2="56.4"/>
+            </g>
+            <g fill="rgba(196,100,60,.7)" class="fadein">
+              <circle cx="210.0" cy="34.0" r="4.5"/>
+              <circle cx="294.0" cy="49.5" r="4.5"/>
+              <circle cx="355.5" cy="92.0" r="4.5"/>
+              <circle cx="378.0" cy="150.0" r="4.5"/>
+              <circle cx="355.5" cy="208.0" r="4.5"/>
+              <circle cx="294.0" cy="250.5" r="4.5"/>
+              <circle cx="210.0" cy="266.0" r="4.5"/>
+              <circle cx="126.0" cy="250.5" r="4.5"/>
+              <circle cx="64.5" cy="208.0" r="4.5"/>
+              <circle cx="42.0" cy="150.0" r="4.5"/>
+              <circle cx="64.5" cy="92.0" r="4.5"/>
+              <circle cx="126.0" cy="49.5" r="4.5"/>
+            </g>
+            <circle cx="210" cy="150" r="32" fill="rgba(196,100,60,.18)" stroke="#C4643C" stroke-width="1.6" class="fadein"/>
+            <text x="210" y="154" text-anchor="middle" fill="#F2EEE6" font-family="Inter,sans-serif" font-size="9.5" letter-spacing="1.4" class="fadein">FOUNDER</text>
+          </svg>
+          <div class="cap">Before: every thread ends at you</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="rv" style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:18px">What that looks like day to day</p>
+        <ul class="gaps">
+          <li class="rv">
+            <svg class="ico red" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span><b>Work stalls waiting for you.</b> Nothing moves past a certain point until you have looked at it.</span>
+          </li>
+          <li class="rv">
+            <svg class="ico red" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3l9-16z"/><path d="M12 10v4"/><path d="M12 17.5v.01"/></svg>
+            <span><b>Execution breaks at the seams.</b> Handoffs between people and teams are where the deadlines go missing.</span>
+          </li>
+          <li class="rv">
+            <svg class="ico red" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.6-6 9-6 9 6 9 6-3.6 6-9 6-9-6-9-6z"/><path d="M4 4l16 16"/></svg>
+            <span><b>Decisions run on gut feel.</b> No dashboard, no metrics, so you cannot see a problem until it is already expensive.</span>
+          </li>
+          <li class="rv">
+            <svg class="ico red" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h6"/></svg>
+            <span><b>Accountability is a conversation, not a system.</b> People agree to things in meetings, then the week absorbs them.</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. HOW I WORK ═══════════════════════════════ -->
+<section id="approach" style="background:var(--ink-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow rv">How I work</div>
+    <h2 class="rv">Diagnose first, <em>then build.</em></h2>
+    <p class="lede rv">I step in when a business is growing faster than its systems can handle. Founders bring me in when execution is breaking down and the operational backbone needs to be built properly so growth does not create chaos.</p>
+    <p class="lede rv" style="margin-top:22px">My work sits at the intersection of systems design, team accountability, and operational leadership. I do not hand over a strategy deck. I build the infrastructure that lets a founder step back from day-to-day without everything falling apart.</p>
+    <p class="lede rv" style="margin-top:22px">Across 20+ companies, including agencies, law firms, and service businesses, I have turned scattered processes into systems teams can actually execute against.</p>
+
+    <div class="approach">
+      <div class="ap rv">
+        <span class="num">01</span>
+        <div class="icobox"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/><path d="M11 8.5v5"/><path d="M8.5 11h5"/></svg></div>
+        <h3>Audit</h3>
+        <p>Map how work actually moves, not how the org chart says it does.</p>
+      </div>
+      <div class="ap rv">
+        <span class="num">02</span>
+        <div class="icobox"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 14h10"/><circle cx="12" cy="8" r="1.6"/></svg></div>
+        <h3>Find the root</h3>
+        <p>Trace the breakdown to its source instead of patching the symptom.</p>
+      </div>
+      <div class="ap rv">
+        <span class="num">03</span>
+        <div class="icobox"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M8 14h4"/></svg></div>
+        <h3>Install the system</h3>
+        <p>Project management, cadence, SOPs and KPIs your team can execute against.</p>
+      </div>
+      <div class="ap rv">
+        <span class="num">04</span>
+        <div class="icobox"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20V8"/></svg></div>
+        <h3>Hold the line</h3>
+        <p>Run the accountability rhythm until the system holds without me.</p>
+      </div>
+    </div>
+
+    <div class="leak rv">
+      <svg class="bigico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 3.2 10.4 9.6"/><path d="M12 3.2V9.6"/><path d="M19.5 3.2 13.6 9.6"/><path d="M7.6 11.2h3.1"/><path d="M13.3 11.2h3.1"/><path d="M12 12.4V19.6"/><path d="M9.6 17.1 12 19.8l2.4-2.7"/></svg>
+      <span class="tag">The Bottleneck</span>
+      <p>A business that cannot run for a week without the founder in it has a system problem, not a people problem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. WHAT I TYPICALLY OWN ═════════════════════ -->
+<section id="own">
+  <div class="wrap">
+    <div class="eyebrow rv">What I typically own</div>
+    <h2 class="rv" style="margin-bottom:32px">Five things, one <em>operating system.</em></h2>
+
+    <div class="owngrid">
+      <div class="own-c rv">
+        <div class="top"><span class="n">01</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span class="lab">Accountability</span></div>
+        <h3>Making sure your team actually does what they said they would.</h3>
+      </div>
+      <div class="own-c rv">
+        <div class="top"><span class="n">02</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/><path d="M13 9h5"/><path d="M13 14h4"/></svg><span class="lab">Project systems</span></div>
+        <h3>Project management systems designed and implemented from scratch.</h3>
+      </div>
+      <div class="own-c rv">
+        <div class="top"><span class="n">03</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span class="lab">Root cause</span></div>
+        <h3>Execution breakdowns fixed at the root cause, not the surface.</h3>
+      </div>
+      <div class="own-c rv">
+        <div class="top"><span class="n">04</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span class="lab">Visibility</span></div>
+        <h3>KPI dashboards so decisions are driven by data, not gut feel.</h3>
+      </div>
+      <div class="own-c rv">
+        <div class="top"><span class="n">05</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h6"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg><span class="lab">Coordination</span></div>
+        <h3>Cross functional coordination so the founder stops being the bottleneck.</h3>
+      </div>
+    </div>
+
+    <div class="figure rv" style="margin-top:clamp(28px,3.5vw,44px)">
+      <svg class="ill" viewBox="0 0 720 200" fill="none" aria-label="Founder above one operating system layer, with the business functions underneath">
+        <g class="fadein">
+          <rect x="276" y="10" width="168" height="40" rx="8" fill="rgba(95,208,138,.1)" stroke="rgba(95,208,138,.45)"/>
+          <text x="360" y="35" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2" fill="#5FD08A">FOUNDER</text>
+        </g>
+        <g class="draw" style="--len:120" stroke="rgba(95,208,138,.5)" stroke-width="1.4">
+          <path d="M360 50v26"/>
+        </g>
+        <g class="fadein" style="transition-delay:.3s">
+          <rect x="30" y="76" width="660" height="50" rx="10" fill="rgba(217,169,76,.09)" stroke="rgba(217,169,76,.45)"/>
+          <text x="360" y="98" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2.4" fill="#D9A94C">THE OPERATING SYSTEM</text>
+          <text x="360" y="115" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.4" fill="rgba(242,238,230,.45)">PM STANDARD · CADENCE · SOPs · KPIs · DASHBOARD · OWNERSHIP</text>
+        </g>
+        <g class="draw" style="--len:120" stroke="rgba(217,169,76,.4)" stroke-width="1.2">
+          <path d="M100 126v28"/><path d="M230 126v28"/><path d="M360 126v28"/><path d="M490 126v28"/><path d="M620 126v28"/>
+        </g>
+        <g class="fadein" style="transition-delay:.55s">
+          <g fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)">
+            <rect x="56" y="154" width="88" height="30" rx="6"/>
+            <rect x="186" y="154" width="88" height="30" rx="6"/>
+            <rect x="316" y="154" width="88" height="30" rx="6"/>
+            <rect x="446" y="154" width="88" height="30" rx="6"/>
+            <rect x="576" y="154" width="88" height="30" rx="6"/>
+          </g>
+          <g font-family="Inter,sans-serif" font-size="8.5" letter-spacing="1.2" fill="rgba(242,238,230,.4)" text-anchor="middle">
+            <text x="100" y="173">SALES</text><text x="230" y="173">DELIVERY</text><text x="360" y="173">TEAM</text><text x="490" y="173">FINANCE</text><text x="620" y="173">PARTNERS</text>
+          </g>
+        </g>
+      </svg>
+      <div class="cap">The system absorbs what you used to absorb</div>
+    </div>
+
+    <div class="leak rv" style="border-color:rgba(95,208,138,.3);background:rgba(95,208,138,.07)">
+      <svg class="bigico" viewBox="0 0 24 24" aria-hidden="true" style="stroke:var(--green)"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.8 2.8L16.2 9"/></svg>
+      <span class="tag" style="color:var(--green)">The Goal</span>
+      <p>A business that runs without the founder in every conversation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. SERVICE AREAS ════════════════════════════ -->
+<section id="sectors" style="background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow rv">Service areas</div>
+    <h2 class="rv">Different businesses, <em>the same break.</em></h2>
+    <p class="lede rv">The operating problem is structural, so it shows up everywhere. What changes is the shape it takes and which part of the system has to be built first.</p>
+
+    <div class="sectors">
+
+      <div class="sector rv">
+        <div class="vis">
+          <svg class="secico" viewBox="0 0 24 24" fill="none" aria-label="Megaphone representing marketing agencies"><g class="fadein"><path d="M3.5 9.5v5a1 1 0 0 0 1 1h2.6l7.4 4.2V4.3L7.1 8.5H4.5a1 1 0 0 0-1 1z"/><path d="M18.2 8.4a5 5 0 0 1 0 7.2"/><path d="M20.8 5.6a8.6 8.6 0 0 1 0 12.8"/><path d="M7.1 15.5v3.7a1.3 1.3 0 0 0 2.6 0v-2.2"/></g></svg>
+        </div>
+        <div class="kind">01 · Agencies</div>
+        <h3>Marketing</h3>
+        <p class="breaks">Too many accounts, not enough process. You are the quality control.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>One delivery standard, every account</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Client reporting that writes itself</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Capacity planned before the next retainer</span></li>
+        </ul>
+      </div>
+
+      <div class="sector rv">
+        <div class="vis">
+          <svg class="secico" viewBox="0 0 24 24" fill="none" aria-label="Scales representing law firms"><g class="fadein"><path d="M12 3.2v17.6"/><path d="M6.6 20.8h10.8"/><path d="M4.2 6.6h15.6"/><path d="m1.8 14.4 2.4-7.8 2.4 7.8"/><path d="M1.8 14.4a2.4 2.4 0 0 0 4.8 0"/><path d="m17.4 14.4 2.4-7.8 2.4 7.8"/><path d="M17.4 14.4a2.4 2.4 0 0 0 4.8 0"/></g></svg>
+        </div>
+        <div class="kind">02 · Professional services</div>
+        <h3>Law firms</h3>
+        <p class="breaks">The case work is rigorous. The operation around it is not.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Intake to close, one pipeline</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Associate workload made visible</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>SOPs for repeat matter types</span></li>
+        </ul>
+      </div>
+
+      <div class="sector rv">
+        <div class="vis">
+          <svg class="secico" viewBox="0 0 24 24" fill="none" aria-label="Sprout representing wellness businesses"><g class="fadein"><path d="M12 20.6v-7.4"/><path d="M12 13.2C12 8.6 15.4 4.4 20.4 3.4c.8 4.9-2.4 9.3-7 9.8h-1.4z"/><path d="M12 16.4C12 13.1 9.6 10 6 9.3c-.6 3.5 1.7 6.6 5 7.1H12z"/></g></svg>
+        </div>
+        <div class="kind">03 · Practitioner led</div>
+        <h3>Wellness</h3>
+        <p class="breaks">The practitioner is the product, so growth just means more hours.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Enquiry to rebooking, mapped</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Admin off the practitioner</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Retention tracked as a number</span></li>
+        </ul>
+      </div>
+
+      <div class="sector rv">
+        <div class="vis">
+          <svg class="secico" viewBox="0 0 24 24" fill="none" aria-label="Person with growth arrow representing coaching businesses"><g class="fadein"><circle cx="9" cy="7" r="3.4"/><path d="M2.8 20.4a6.2 6.2 0 0 1 12.4 0"/><path d="M16.6 11.6 20.2 8"/><path d="M17 7.6h3.4V11"/></g></svg>
+        </div>
+        <div class="kind">04 · Knowledge business</div>
+        <h3>Coaching businesses</h3>
+        <p class="breaks">The offer works. The delivery does not repeat.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Program productised to repeat</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Onboarding and follow up automated</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Associate coaches deliver to standard</span></li>
+        </ul>
+      </div>
+
+      <div class="sector rv">
+        <div class="vis">
+          <svg class="secico" viewBox="0 0 24 24" fill="none" aria-label="Buildings representing construction and real estate"><g class="fadein"><path d="M3 20.8h18"/><path d="M5.4 20.8V9.6l6-3.4v14.6"/><path d="M11.4 11.4 18.6 8v12.8"/><path d="M8.2 12.6v1.8M8.2 16.4v1.8M14.8 12.6v1.8M14.8 16.4v1.8"/></g></svg>
+        </div>
+        <div class="kind">05 · Project based</div>
+        <h3>Construction and real estate</h3>
+        <p class="breaks">Sites, subcontractors and timelines moving at once, tracked by phone call.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Every phase owned and tracked</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Subcontractors on a documented rhythm</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Budget and schedule variance, weekly</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="scopenote rv">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;margin-top:3px"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8v.01"/></svg>
+      <span>Not on this list? The engagement still works. These are simply the five where I have seen the same failure enough times to know where to start.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. SEE HOW I WORK ═══════════════════════════ -->
+<section id="loom" style="background:var(--ink-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow rv">See how I work</div>
+    <h2 class="rv">Quick intro, <em>watch before we chat.</em></h2>
+
+    <div class="loom">
+      <div class="playcard rv">
+        <svg class="ill" viewBox="0 0 640 300" fill="none" aria-label="A short intro video walkthrough">
+          <rect x="0" y="0" width="640" height="300" rx="6" fill="rgba(255,255,255,.02)"/>
+          <g class="fadein">
+            <circle cx="320" cy="140" r="46" fill="rgba(217,169,76,.12)" stroke="rgba(217,169,76,.45)" stroke-width="1.4"/>
+            <path d="M309 122l30 18-30 18z" fill="#D9A94C"/>
+          </g>
+          <g class="fadein" style="transition-delay:.3s">
+            <rect x="120" y="222" width="400" height="5" rx="2.5" fill="rgba(255,255,255,.1)"/>
+            <rect x="120" y="222" width="126" height="5" rx="2.5" fill="rgba(217,169,76,.8)"/>
+            <circle cx="246" cy="224.5" r="5" fill="#D9A94C"/>
+            <text x="120" y="250" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.6" fill="rgba(242,238,230,.4)">QUICK INTRO · LOOM</text>
+          </g>
+        </svg>
+        <div class="cap" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);margin-top:18px;display:flex;align-items:center;gap:10px">A walkthrough of how I work</div>
+      </div>
+
+      <div>
+        <h3 class="rv" style="font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.12;margin-bottom:18px">A walkthrough before the call.</h3>
+        <p class="lede rv" style="margin-bottom:32px">A quick walkthrough of how I work, what to expect, and whether we are a fit.</p>
+        <a class="btn btn-primary rv" href="
+
+
+
+Operations Manager
+
+loom.com/share/7b0cfd9b9898472db977193a7275cb68?sid=48c00636-9716-4e43-8341-db2b7ea7e64f
+" target="_blank" rel="noopener">Watch on Loom <span class="arw">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. TESTIMONIALS ═════════════════════════════ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="eyebrow rv">Testimonials</div>
+    <h2 class="rv">In their <em>own words.</em></h2>
+    <p class="lede rv">Unedited client reviews. Every engagement to date, every one of them five stars.</p>
+
+    <div class="tbar rv">
+      <div class="item">
+        <div class="tstars" aria-label="Five out of five stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg>
+        </div>
+        <span class="v">5.0</span>
+        <span class="k">Average rating</span>
+      </div>
+      <div class="item"><svg class="uplogo" viewBox="0 3.475 24 17.05" aria-label="Upwork"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" fill="#6FDA44"/></svg><span class="v">100%</span><span class="k">Job success score</span></div>
+    </div>
+
+    <div class="tgrid">
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>I have worked with Vidya as a fractional Chief of Staff for my U.S. immigration law firm, and her impact has been exceptional. This has been especially apparent when I&#x27;ve had to take extended leave from the business and needed someone to ensure it kept running.</p>
+          <p>She quickly became a trusted extension of our leadership team, bringing structure, accountability, and strategic oversight to a fast-moving business. She has successfully managed cross-functional projects, coordinated team operations, improved internal systems - including integration of a new project management tool in Click-Up - and ensured key initiatives moved from concept to execution without getting lost in the day-to-day demands of running the company.</p>
+          <p>What sets her apart is her ability to think both strategically and operationally. She can zoom out to understand business priorities while also diving into the details necessary to keep projects on track. Her communication is professional, proactive, and highly organized, and she consistently demonstrates sound judgment when handling sensitive matters.</p>
+          <p>As a founder, having someone who can anticipate issues, create clarity, and drive execution is invaluable. She has helped me reclaim significant time and focus, allowing me to concentrate on business development and growth while knowing critical operational matters are being handled effectively.</p>
+          <p>I would not hesitate to recommend her to any founder, executive, or growing business looking for a highly capable Chief of Staff who can create immediate value and become a genuine force multiplier for the organization.</p>
+        </blockquote>
+        <figcaption class="src">Immigration law firm · fractional Chief of Staff</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Vidya has been an exceptional leader in managing my office, transforming my consultancy from a struggling operation into a thriving, well-organized business. Her ability to take charge and steer the organization with confidence and precision was truly remarkable. Vidya’s outstanding customer service skills ensured our clients felt valued and supported, significantly enhancing our reputation and client satisfaction.</p>
+          <p>She demonstrated exceptional talent in managing other freelancers, fostering a collaborative and productive environment that brought out the best in the team. Her organizational skills were instrumental in setting up robust systems and processes that streamlined operations and drove our success.</p>
+          <p>I am deeply grateful for Vidya’s dedication and impact. My only regret is that, due to changes in my business, I am unable to continue working with her. If circumstances were different, I would take Vidya with me everywhere—her professionalism, leadership, and positive attitude are truly irreplaceable. I wholeheartedly recommend her to any organization lucky enough to have her.</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Collaborative</span><span>Professional</span><span>Detail Oriented</span><span>Committed to Quality</span></div>
+        <figcaption class="src">Consultancy · office and operations leadership</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Vidya is the best freelancer I&#x27;ve ever worked with. Her work ethics is incredible, she is super reliable, friendly, and you see she deeply cares about the projects she works in. She also has phenomenal critical thinking, she knows to sopt problems, improve work flow. Really - I can&#x27;t recommend her enough. Will definitely work with her again in the future.</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Reliable</span><span>Solution Oriented</span></div>
+        <figcaption class="src">Endorsed: reliable, solution oriented</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Vidya was an amazing asset to our small team during a growth phase. She got us organized and kept our team accountable with what needed to get done. Beyond that, however, is her ability to strategically contribute to how to do things better for the future. I can&#x27;t wait to work with her again soon.</p>
+          <p>I would snatch her availability up if you see she is applying for your work.</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Solution Oriented</span><span>Accountable for Outcomes</span></div>
+        <figcaption class="src">Endorsed: accountable for outcomes</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Highly recommend - I trialled a few different freelancers initially and Vidya was the clear winner, her organisational skills, communication and overall positive and friendly personality made her a delight to work with</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Collaborative</span><span>Solution Oriented</span><span>Clear Communicator</span><span>Detail Oriented</span></div>
+        <figcaption class="src">Endorsed: clear communicator, detail oriented</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Working with Athmaja was a positive experience. She was highly knowledgeable, consistently met deadlines, and brought valuable insights that improved the project. Her collaborative approach made communication smooth and efficient throughout. I highly recommend her and look forward to working with her again.</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Collaborative</span><span>Reliable</span><span>Clear Communicator</span></div>
+        <figcaption class="src">Endorsed: collaborative, reliable</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Loved working for Vidya... I wish I had a business that could employ her full time. She is so patient, easy to deal with and goes the extra step to ensure we are happy with her service! Would def recommend</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Collaborative</span><span>Committed to Quality</span></div>
+        <figcaption class="src">Endorsed: committed to quality</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Diligent and thorough with her work, she provided insightful knowledge that streamlined our workflows and operations. She went above and beyond expectations to deliver additional solutions and suggestions from her expertise in areas we were unaware of. I would hire again!</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Detail Oriented</span><span>Committed to Quality</span><span>Solution Oriented</span></div>
+        <figcaption class="src">Endorsed: solution oriented</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>I had a great experience with Athmaja, she shared very useful information about her experience as a COO, she is super knowledgeable and nice to work with!</p>
+        </blockquote>
+        <div class="tend">Identified from contract</div>
+        <div class="ttags"><span>Startup Consulting</span><span>Business Consulting</span><span>Business Plan Writing</span><span>Corporate Communications</span></div>
+        <figcaption class="src">Startup and business consulting</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Super helpful! Was crystal clear in her explanations and picked up on what we were trying to accomplish right away.</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Clear Communicator</span><span>Solution Oriented</span></div>
+        <figcaption class="src">Endorsed: clear communicator</figcaption>
+      </figure>
+      <figure class="tcard rv">
+        <div class="trate" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.8-5.6 5 1.6 7.3L12 18.3 5.5 22l1.6-7.3-5.6-5L9 8.9 12 2z"/></svg><span>5.0</span></div>
+        <blockquote>
+          <p>Professional, responsive and focused. Thank you for your service.</p>
+        </blockquote>
+        <div class="tend">Endorsed by client</div>
+        <div class="ttags"><span>Professional</span><span>Clear Communicator</span></div>
+        <figcaption class="src">Endorsed: professional</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9. THE HUMAN OUTCOME ════════════════════════ -->
+<section class="relief">
+  <div class="narrow">
+    <div class="eyebrow rv">The outcome that matters most</div>
+    <h2 class="rv">Your week stops being other people's week.</h2>
+    <p class="lede rv" style="text-align:center">The hours do not disappear. They get reallocated, from firefighting into the two or three things only a founder can do.</p>
+
+    <div class="weekvis rv">
+      <svg class="ill" viewBox="0 0 620 150" fill="none" aria-label="A founder week reallocated from firefighting to founder level work">
+        <text x="0" y="18" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="rgba(196,100,60,.9)">BEFORE</text>
+        <rect x="0" y="30" width="620" height="26" rx="6" fill="rgba(196,100,60,.16)" stroke="rgba(196,100,60,.3)"/>
+        <text x="310" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.4" fill="rgba(242,238,230,.7)">FIREFIGHTING, APPROVING, CHASING</text>
+        <text x="0" y="98" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="#5FD08A">AFTER</text>
+        <rect x="0" y="110" width="150" height="26" rx="6" fill="rgba(217,169,76,.16)" stroke="rgba(217,169,76,.32)"/>
+        <text x="75" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.2" fill="rgba(242,238,230,.6)">OVERSIGHT</text>
+        <rect x="162" y="110" width="458" height="26" rx="6" fill="rgba(95,208,138,.16)" stroke="rgba(95,208,138,.4)"/>
+        <text x="391" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.4" fill="rgba(242,238,230,.7)">STRATEGY, RELATIONSHIPS, GROWTH</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10. KEY INSIGHT ═════════════════════════════ -->
+<section class="insight">
+  <div class="narrow">
+    <svg class="quotemark rv" viewBox="0 0 44 32" fill="none" aria-hidden="true">
+      <path d="M0 32V18C0 8 6 1.5 16 0l2 5c-5.5 1.5-8.5 5-8.5 9H17v18Zm27 0V18C27 8 33 1.5 43 0l1 5c-5.5 1.5-8.5 5-8.5 9H44v18Z" fill="#C4643C"/>
+    </svg>
+    <div class="eyebrow rv">Key insight</div>
+    <blockquote class="rv">Growth does not break businesses. Unbuilt systems do.</blockquote>
+    <div class="attr rv">Athmaja Vidya Ajith · Fractional COO</div>
+  </div>
+</section>
+
+<!-- ═══ 11. FIND ME ONLINE ══════════════════════════ -->
+<section id="links" style="background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow rv">Find me online</div>
+    <h2 class="rv">Check the <em>receipts.</em></h2>
+
+    <div class="linkgrid">
+      <a class="lk rv" href="https://www.linkedin.com/in/athmaja-vidya-ajith-972803282/" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17"/><path d="M7.5 7.2v.01"/><path d="M11.5 17v-4a2.5 2.5 0 0 1 5 0v4"/><path d="M11.5 17v-6.5"/></svg>
+        <span class="t">LinkedIn</span>
+        <span class="s">View profile <span class="arw">→</span></span>
+      </a>
+      <a class="lk rv" href="https://www.upwork.com/freelancers/~01db64e61e76dab428?mp_source=share" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3l2.4 5.6L20 10l-4.4 3.6L17 20l-5-3-5 3 1.4-6.4L4 10l5.6-1.4L12 3z"/></svg>
+        <span class="t">Upwork</span>
+        <span class="s">100% job success <span class="arw">→</span></span>
+      </a>
+      <a class="lk rv" href="
+Systems portfolio.pdf
+
+drive.google.com/file/d/1MRBqW1lZLyCMHR8rLR-mkQUqT1NGboI6/view?usp=sharing
+" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+        <span class="t">Systems portfolio</span>
+        <span class="s">View portfolio <span class="arw">→</span></span>
+      </a>
+      <a class="lk rv" href="https://calendly.com/athmanaajith/30min" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M8 15l2.5 2.5L16 12"/></svg>
+        <span class="t">Book a call</span>
+        <span class="s">Schedule 30 min <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 12. CTA ═════════════════════════════════════ -->
+<section class="final" id="book">
+  <div class="narrow">
+    <div class="eyebrow rv" style="justify-content:center">Work with me</div>
+    <h2 class="rv">Ready to stop running everything yourself?</h2>
+    <p class="lede rv" style="text-align:center">Every engagement begins with a scoping conversation to understand your business, what is breaking, and what the right level of involvement looks like.</p>
+    <a class="btn btn-primary rv" href="https://calendly.com/athmanaajith/30min" target="_blank" rel="noopener">Book a 30 minute intro call <span class="arw">→</span></a>
+    <a class="mail rv" href="mailto:athmajaajith@gmail.com">athmajaajith@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div>Athmaja Vidya Ajith · Fractional COO · Operations & Systems</div>
+  <div><a href="https://calendly.com/athmanaajith/30min" target="_blank" rel="noopener">Book a call</a> &nbsp;·&nbsp; <a href="mailto:athmajaajith@gmail.com">Email</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/athmaja-vidya-ajith-972803282/" target="_blank" rel="noopener">LinkedIn</a></div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'), bar=document.getElementById('progress');
+  function onScroll(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    nav.classList.toggle('stuck', y>60);
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(y/h)*100:0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var groups=new WeakMap();
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, p=el.parentElement;
+      var i=groups.get(p)||0; groups.set(p,i+1);
+      el.style.transitionDelay=(Math.min(i,6)*70)+'ms';
+      el.classList.add('in');
+      el.querySelectorAll('.grow').forEach(function(g){
+        if(g.style.transform==='scaleX(0)') g.style.transform='scaleX(1)';
+      });
+      io.unobserve(el);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, target=parseFloat(el.dataset.count);
+      var pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+      var t0=null, dur=1300;
+      function tick(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/dur,1), eased=1-Math.pow(1-p,3);
+        el.textContent=pre+Math.round(target*eased)+suf;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+})();
+</script>
+</body>
+</html>
