@@ -60,6 +60,12 @@
     transition:background .3s ease,transform .3s ease;white-space:nowrap;
   }
   .nav-cta:hover{background:var(--gold);transform:translateY(-1px)}
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,28px)}
+  .nav-link{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+    color:var(--paper-dim);text-decoration:none;white-space:nowrap;transition:color .3s ease;
+  }
+  .nav-link:hover{color:var(--paper)}
  
   section{position:relative;z-index:2;padding:clamp(48px,6.5vw,86px) var(--pad)}
   .wrap{max-width:1160px;margin:0 auto}
@@ -269,6 +275,7 @@
   .tbar .v{font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);line-height:1;color:var(--gold)}
   .tbar .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);max-width:18ch;line-height:1.5}
   .tbar .uplogo{width:30px;height:auto;flex-shrink:0;align-self:center}
+  .tbar .v.word{font-size:clamp(20px,2.4vw,28px)}
   .tstars{display:flex;gap:5px;align-items:center}
   .tstars svg{width:16px;height:16px;fill:var(--gold)}
  
@@ -296,10 +303,16 @@
   /* ── timeline ───────────────────────────── */
   .timeline{margin-top:64px;border-top:1px solid var(--line);padding-top:48px}
   .tl-head{font-size:clamp(22px,3.2vw,34px);letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--gold);line-height:1.1;display:flex;align-items:center;gap:18px;margin-bottom:36px}  .tl-head::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px;align-self:center}
-  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,5vw,64px)}
-  .tl-item{position:relative;padding-top:24px;border-top:2px solid var(--line-2)}
-  .tl-n{font-family:var(--serif);font-size:clamp(44px,5vw,64px);line-height:1;letter-spacing:-.02em;color:var(--gold);opacity:.4;margin-bottom:18px}
-  .tl-item:last-child .tl-n{color:var(--green);opacity:.5}
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,5vw,64px);position:relative}
+  .tl::before{content:'';position:absolute;top:23px;left:calc(100%/6);right:calc(100%/6);height:1px;background:var(--line-2);z-index:0}
+  .tl-item{position:relative;z-index:1}
+  .tl-node{
+    width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:var(--gold-soft);border:1px solid rgba(217,169,76,.3);margin-bottom:22px;
+  }
+  .tl-node .ico{width:20px;height:20px;stroke:var(--gold)}
+  .tl-item:last-child .tl-node{background:var(--green-soft);border-color:rgba(95,208,138,.35)}
+  .tl-item:last-child .tl-node .ico{stroke:var(--green)}
   .tl-item .w{font-family:var(--serif);font-size:clamp(24px,2.4vw,30px);color:var(--gold);margin-bottom:10px}
   .tl-item:last-child .w{color:var(--green)}
   .tl-item p{font-size:15px;color:var(--paper-faint);line-height:1.6;max-width:32ch}
@@ -322,10 +335,13 @@
   .insight .quotemark{width:44px;height:auto;margin:0 auto 22px;display:block;opacity:.32}
  
   /* ── final ──────────────────────────────── */
-  .final{text-align:center;position:relative;overflow:hidden;padding-top:clamp(90px,13vw,170px)}
+  .final{text-align:center;position:relative;overflow:hidden;padding-top:clamp(48px,6.5vw,86px)}
   .final::after{content:'';position:absolute;z-index:-1;left:50%;bottom:-55%;transform:translateX(-50%);width:min(140vw,1300px);height:min(140vw,1300px);border-radius:50%;background:radial-gradient(circle,rgba(196,100,60,.14) 0%,rgba(217,169,76,.06) 40%,transparent 66%);filter:blur(24px)}
-  .final h2{font-size:clamp(38px,7.5vw,92px);max-width:14ch;margin:0 auto 28px}
-  .final .lede{margin:0 auto 46px;text-align:center}
+  .final h2{font-size:clamp(28px,4.4vw,52px);max-width:16ch;margin:0 auto 28px}
+  .final .lede{margin:0 auto 46px;text-align:center;font-size:clamp(13px,1.3vw,14px)}
+  .final .eyebrow{justify-content:center}
+  .final .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:var(--line)}
+  .final .eyebrow::after{flex:none;width:60px}
   .final .mail{display:block;margin-top:30px;font-size:13px;letter-spacing:.14em;color:var(--paper-faint);text-decoration:none}
   .final .mail:hover{color:var(--gold)}
  
@@ -360,10 +376,13 @@
     .nav-cta{font-size:10.5px;letter-spacing:.06em;padding:8px 14px}
     .nav-mark b{display:none}
     .nav-mark{font-size:11px;max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .nav-links{gap:12px}
+    .nav-link{font-size:10.5px;letter-spacing:.06em}
     .hero-actions .btn{flex:1;justify-content:center}
     .sectors{grid-template-columns:1fr}
   }
   @media(max-width:520px){.approach{grid-template-columns:1fr}.linkgrid{grid-template-columns:1fr}}
+  @media(max-width:420px){.nav-link{display:none}}
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .js-rv .rv{opacity:1;transform:none}
@@ -379,7 +398,11 @@
  
 <nav id="nav">
   <div class="nav-mark">Athmaja Vidya Ajith &nbsp;·&nbsp; <b>Fractional COO</b></div>
-  <a class="nav-cta" href="#book">Book a call</a>
+  <div class="nav-links">
+    <a class="nav-link" href="#">Case studies</a>
+    <a class="nav-link" href="#sectors">Services</a>
+    <a class="nav-cta" href="#book">Book a call</a>
+  </div>
 </nav>
  
 <!-- ═══ 1. HERO ═════════════════════════════════════ -->
@@ -541,9 +564,9 @@
     <div class="timeline rv">
       <div class="tl-head">How an engagement starts</div>
       <div class="tl">
-        <div class="tl-item"><div class="tl-n">01</div><div class="w">Scoping call</div><p>Thirty minutes on what is breaking and what the right level of involvement looks like.</p></div>
-        <div class="tl-item"><div class="tl-n">02</div><div class="w">First 30 days</div><p>Audit the operation, name the root cause, agree the build order.</p></div>
-        <div class="tl-item"><div class="tl-n">03</div><div class="w">From there</div><p>Systems installed, cadence running, and the founder gradually out of the middle.</p></div>
+        <div class="tl-item"><div class="tl-node"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.4 2.1L8 10c1.3 2.6 3.4 4.7 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2Z"/></svg></div><div class="w">Scoping call</div><p>Thirty minutes on what is breaking and what the right level of involvement looks like.</p></div>
+        <div class="tl-item"><div class="tl-node"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/><path d="M11 8.5v5"/><path d="M8.5 11h5"/></svg></div><div class="w">First 30 days</div><p>Audit the operation, name the root cause, agree the build order.</p></div>
+        <div class="tl-item"><div class="tl-node"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div><div class="w">From there</div><p>Systems installed, cadence running, and the founder gradually out of the middle.</p></div>
       </div>
     </div>
   </div>
@@ -653,36 +676,13 @@
     </div>
   </div>
 </section>
- 
-<!-- ═══ 5. WHAT I TYPICALLY OWN ═════════════════════ -->
+
+<!-- ═══ 5. OPERATING SYSTEM DIAGRAM ═════════════════ -->
 <section id="own">
   <div class="wrap">
-    <div class="eyebrow rv">What I typically own</div>
-    <h2 class="rv" style="margin-bottom:32px">Five things, one <em>operating system.</em></h2>
- 
-    <div class="owngrid">
-      <div class="own-c rv">
-        <div class="top"><span class="n">01</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span class="lab">Accountability</span></div>
-        <h3>Making sure your team actually does what they said they would.</h3>
-      </div>
-      <div class="own-c rv">
-        <div class="top"><span class="n">02</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/><path d="M13 9h5"/><path d="M13 14h4"/></svg><span class="lab">Project systems</span></div>
-        <h3>Project management systems designed and implemented from scratch.</h3>
-      </div>
-      <div class="own-c rv">
-        <div class="top"><span class="n">03</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span class="lab">Root cause</span></div>
-        <h3>Execution breakdowns fixed at the root cause, not the surface.</h3>
-      </div>
-      <div class="own-c rv">
-        <div class="top"><span class="n">04</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span class="lab">Visibility</span></div>
-        <h3>KPI dashboards so decisions are driven by data, not gut feel.</h3>
-      </div>
-      <div class="own-c rv">
-        <div class="top"><span class="n">05</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h6"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg><span class="lab">Coordination</span></div>
-        <h3>Cross functional coordination so the founder stops being the bottleneck.</h3>
-      </div>
-    </div>
- 
+    <div class="eyebrow rv">The operating system</div>
+    <h2 class="rv" style="margin-bottom:32px">One layer, <em>everyone plugged in.</em></h2>
+
     <div class="figure rv" style="margin-top:clamp(28px,3.5vw,44px)">
       <svg class="ill" viewBox="0 0 720 200" fill="none" aria-label="Founder above one operating system layer, with the business functions underneath">
         <g class="fadein">
@@ -715,7 +715,7 @@
       </svg>
       <div class="cap">The system absorbs what you used to absorb</div>
     </div>
- 
+
     <div class="leak rv" style="border-color:rgba(95,208,138,.3);background:rgba(95,208,138,.07)">
       <svg class="bigico" viewBox="0 0 24 24" aria-hidden="true" style="stroke:var(--green)"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.8 2.8L16.2 9"/></svg>
       <span class="tag" style="color:var(--green)">The Goal</span>
@@ -723,7 +723,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ═══ 6. SERVICE AREAS ════════════════════════════ -->
 <section id="sectors" style="background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
@@ -863,6 +863,7 @@
         <span class="k">Average rating</span>
       </div>
       <div class="item"><svg class="uplogo" viewBox="0 3.475 24 17.05" aria-label="Upwork"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" fill="#6FDA44"/></svg><span class="v">100%</span><span class="k">Job success score</span></div>
+      <div class="item"><svg class="uplogo" viewBox="0 0 56 60" aria-label="Upwork Top Rated Plus badge"><path d="M28 5 51 17.5 51 42.5 28 55 5 42.5 5 17.5Z" fill="#E575B9" stroke="#E575B9" stroke-width="10" stroke-linejoin="round"/><g transform="translate(25.5 29.3) scale(1 1.16)"><path d="M0.00 -12.20 L3.16 -4.34 L11.60 -3.77 L5.11 1.66 L7.17 9.87 L0.00 5.37 L-7.17 9.87 L-5.11 1.66 L-11.60 -3.77 L-3.16 -4.34 Z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></g><g stroke="#E575B9" stroke-width="6.6" stroke-linecap="round"><path d="M36 24V35"/><path d="M30.5 29.5H41.5"/></g><g stroke="#fff" stroke-width="2.7" stroke-linecap="round"><path d="M36 24V35"/><path d="M30.5 29.5H41.5"/></g></svg><span class="v word">Top Rated Plus</span><span class="k">Top 3% of talent</span></div>
     </div>
  
     <div class="tgrid">
@@ -973,29 +974,7 @@
     </div>
   </div>
 </section>
- 
-<!-- ═══ 9. THE HUMAN OUTCOME ════════════════════════ -->
-<section class="relief">
-  <div class="narrow">
-    <div class="eyebrow rv">The outcome that matters most</div>
-    <h2 class="rv">Your week stops being other people's week.</h2>
-    <p class="lede rv" style="text-align:center">The hours do not disappear. They get reallocated, from firefighting into the two or three things only a founder can do.</p>
- 
-    <div class="weekvis rv">
-      <svg class="ill" viewBox="0 0 620 150" fill="none" aria-label="A founder week reallocated from firefighting to founder level work">
-        <text x="0" y="18" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="rgba(196,100,60,.9)">BEFORE</text>
-        <rect x="0" y="30" width="620" height="26" rx="6" fill="rgba(196,100,60,.16)" stroke="rgba(196,100,60,.3)"/>
-        <text x="310" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.4" fill="rgba(242,238,230,.7)">FIREFIGHTING, APPROVING, CHASING</text>
-        <text x="0" y="98" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="#5FD08A">AFTER</text>
-        <rect x="0" y="110" width="150" height="26" rx="6" fill="rgba(217,169,76,.16)" stroke="rgba(217,169,76,.32)"/>
-        <text x="75" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.2" fill="rgba(242,238,230,.6)">OVERSIGHT</text>
-        <rect x="162" y="110" width="458" height="26" rx="6" fill="rgba(95,208,138,.16)" stroke="rgba(95,208,138,.4)"/>
-        <text x="391" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.4" fill="rgba(242,238,230,.7)">STRATEGY, RELATIONSHIPS, GROWTH</text>
-      </svg>
-    </div>
-  </div>
-</section>
- 
+
 <!-- ═══ 10. KEY INSIGHT ═════════════════════════════ -->
 <section class="insight">
   <div class="narrow">
@@ -1003,7 +982,7 @@
       <path d="M0 32V18C0 8 6 1.5 16 0l2 5c-5.5 1.5-8.5 5-8.5 9H17v18Zm27 0V18C27 8 33 1.5 43 0l1 5c-5.5 1.5-8.5 5-8.5 9H44v18Z" fill="#C4643C"/>
     </svg>
     <div class="eyebrow rv">Key insight</div>
-    <blockquote class="rv">Growth does not break businesses. Unbuilt systems do.</blockquote>
+    <blockquote class="rv">Every founder blames growth for what unbuilt systems actually broke.</blockquote>
     <div class="attr rv">Athmaja Vidya Ajith · Fractional COO</div>
   </div>
 </section>
@@ -1030,7 +1009,7 @@
         <span class="t">Systems portfolio</span>
         <span class="s">View portfolio <span class="arw">→</span></span>
       </a>
-      <a class="lk rv" href="https://calendly.com/athmanaajith/30min" target="_blank" rel="noopener">
+      <a class="lk rv" href="https://calendly.com/athmanaajith/30min?month=2026-08" target="_blank" rel="noopener">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M8 15l2.5 2.5L16 12"/></svg>
         <span class="t">Book a call</span>
         <span class="s">Schedule 30 min <span class="arw">→</span></span>
@@ -1045,14 +1024,14 @@
     <div class="eyebrow rv" style="justify-content:center">Work with me</div>
     <h2 class="rv">Ready to stop running everything yourself?</h2>
     <p class="lede rv" style="text-align:center">Every engagement begins with a scoping conversation to understand your business, what is breaking, and what the right level of involvement looks like.</p>
-    <a class="btn btn-primary rv" href="https://calendly.com/athmanaajith/30min" target="_blank" rel="noopener">Book a 30 minute intro call <span class="arw">→</span></a>
+    <a class="btn btn-primary rv" href="https://calendly.com/athmanaajith/30min?month=2026-08" target="_blank" rel="noopener">Book a 30 minute intro call <span class="arw">→</span></a>
     <a class="mail rv" href="mailto:athmajaajith@gmail.com">athmajaajith@gmail.com</a>
   </div>
 </section>
  
 <footer>
   <div>Athmaja Vidya Ajith · Fractional COO · Operations & Systems</div>
-  <div><a href="https://calendly.com/athmanaajith/30min" target="_blank" rel="noopener">Book a call</a> &nbsp;·&nbsp; <a href="mailto:athmajaajith@gmail.com">Email</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/athmaja-vidya-ajith-972803282/" target="_blank" rel="noopener">LinkedIn</a></div>
+  <div><a href="https://calendly.com/athmanaajith/30min?month=2026-08" target="_blank" rel="noopener">Book a call</a> &nbsp;·&nbsp; <a href="mailto:athmajaajith@gmail.com">Email</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/athmaja-vidya-ajith-972803282/" target="_blank" rel="noopener">LinkedIn</a></div>
 </footer>
  
 <script>
