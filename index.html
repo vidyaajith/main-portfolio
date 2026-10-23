@@ -189,6 +189,19 @@
   .leak .tag{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold);white-space:nowrap}
   .leak p{font-family:var(--serif);font-size:clamp(20px,2.7vw,32px);line-height:1.28;flex:1;min-width:260px}
   .leak .bigico{width:52px;height:52px;stroke:var(--gold);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .leak.goal{margin-top:36px;padding:clamp(16px,2.2vw,24px) clamp(20px,3vw,32px);gap:clamp(14px,2vw,24px)}
+  .leak.goal .bigico{width:34px;height:34px}
+  .leak.goal .tag{font-size:10.5px}
+  .leak.goal p{font-size:clamp(17px,1.9vw,22px);min-width:220px}
+  .golink{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap;
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--green);
+    border:1px solid rgba(95,208,138,.4);border-radius:100px;padding:10px 20px;
+    transition:background .3s ease,color .3s ease,border-color .3s ease;
+  }
+  .golink:hover{background:var(--green);color:var(--ink);border-color:var(--green)}
+  .golink .arw{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .golink:hover .arw{transform:translateX(4px)}
  
   /* ── steps ──────────────────────────────── */
   .owngrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -727,10 +740,11 @@
       <div class="cap">The system absorbs what you used to absorb</div>
     </div>
 
-    <div class="leak rv" style="border-color:rgba(95,208,138,.3);background:rgba(95,208,138,.07)">
+    <div class="leak goal rv" style="border-color:rgba(95,208,138,.3);background:rgba(95,208,138,.07)">
       <svg class="bigico" viewBox="0 0 24 24" aria-hidden="true" style="stroke:var(--green)"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.8 2.8L16.2 9"/></svg>
       <span class="tag" style="color:var(--green)">The Goal</span>
       <p>A business that runs without the founder in every conversation.</p>
+      <a class="golink" href="https://vidyaajith.github.io/AI-systems/">See the systems <span class="arw">→</span></a>
     </div>
   </div>
 </section>
